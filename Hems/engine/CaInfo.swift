@@ -44,6 +44,9 @@ public class CaInfo {
     //팝업 메세지
     public var strMessage: String = ""
     
+    //메뉴 관련
+    public var isDr : Int = 0
+    
     
     //push notification 정보
     //public var strPushTitle: String = ""
@@ -124,6 +127,7 @@ public class CaInfo {
     public var dtMeterInstalled: Date? = nil
     public var dtPriceModified: Date? = nil
     public var strPriceComment: String = ""
+    public var nUnreadDrCount: Int = 0
     
     public var nAuthType: Int = m_GlobalEngine.AUTH_TYPE_UNKNOWN
     

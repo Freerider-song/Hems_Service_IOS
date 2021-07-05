@@ -51,6 +51,8 @@ public class CaEngine
     public let API_CHANGE_PASSWORD: Int = 1040
     public let API_CHANGE_PASSWORD_BY_MEMBER_ID: Int = 1041
     public let API_CHANGE_MEMBER_SETTINGS: Int = 1042
+    public let API_GET_DR_LIST: Int = 1043
+    public let API_SET_DR_LIST_AS_READ: Int = 1044
     
     //Auth Type
     public let AUTH_TYPE_UNKNOWN: Int = 1000
@@ -499,6 +501,27 @@ public class CaEngine
         Arg.addArg("SeqMember", nSeqMember)
         
         executeCommand(Arg, API_GET_UNREAD_ALARM_COUNT, bShowWaitDialog, viewControl)
+    }
+    
+    func GetDrList(_ nSeqMember: Int, _ strTimeCreatedMax: String, _ nCountDr: Int, _ bShowWaitDialog: Bool, _ viewControl: AnyObject) {
+        print("CaEngine: GetDrList Called : SeqMember=\(nSeqMember) TimeCreatedMax=\(strTimeCreatedMax) CountDr=\(nCountDr)")
+        
+        let Arg = CaArg("GetDreList", NO_CMD_ARGS)
+        Arg.addArg("SeqMember", nSeqMember)
+        Arg.addArg("TimeCreatedMax", strTimeCreatedMax)
+        Arg.addArg("CountDr", nCountDr)
+        
+        executeCommand(Arg, API_GET_DR_LIST, bShowWaitDialog, viewControl)
+    }
+    
+    func SetDrListAsRead(_ nSeqMember: Int, _ strSeqDrList: String, _ bShowWaitDialog: Bool, _ viewControl: AnyObject) {
+        print("CaEngine: SetDrListAsRead Called : SeqMember=\(nSeqMember) SeqNoticeList=\(strSeqDrList)")
+        
+        let Arg = CaArg("SetDrListAsRead", NO_CMD_ARGS)
+        Arg.addArg("SeqMember", nSeqMember)
+        Arg.addArg("SeqDrList", strSeqDrList)
+        
+        executeCommand(Arg, API_SET_DR_LIST_AS_READ, bShowWaitDialog, viewControl)
     }
 
     func GetNoticeList(_ nSeqMember: Int, _ strTimeCreatedMax: String, _ nCountNotice: Int, _ bShowWaitDialog: Bool, _ viewControl: AnyObject) {

@@ -13,6 +13,11 @@ class ViewControllerSideMenu: UIViewController {
     @IBOutlet var lblDongHo: UILabel!
     @IBOutlet var lblName: UILabel!
     
+    @IBOutlet weak var UIDr: UIView!
+    @IBOutlet weak var UISetting: UIView!
+    
+    @IBOutlet weak var UIDrAndUISettingHeight: NSLayoutConstraint!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -20,6 +25,11 @@ class ViewControllerSideMenu: UIViewController {
         lblDongHo.text = CaApp.m_Info.strAptDongName + "동 " + CaApp.m_Info.strAptHoName + "호"
         lblName.text = CaApp.m_Info.strMemberName + " 님"
         // Do any additional setup after loading the view.
+        
+        if(CaApp.m_Info.isDr == 0){
+            UIDr.isHidden = true
+            UIDrAndUISettingHeight.constant = 0 - UIDr.frame.height
+        }
     }
     
     // Navigation bar 숨김
@@ -88,6 +98,13 @@ class ViewControllerSideMenu: UIViewController {
     @IBAction func onNoticeList(_ sender: UIButton) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let view: CustomUIViewController = storyboard.instantiateViewController(identifier: "ViewControllerNoticeList")
+        view.modalPresentationStyle = .fullScreen
+        self.present(view, animated: true, completion: nil)
+    }
+    @IBAction func OnDemandRequest(_ sender: UIButton) {
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let view: CustomUIViewController = storyboard.instantiateViewController(identifier: "ViewControllerDemandResponse")
         view.modalPresentationStyle = .fullScreen
         self.present(view, animated: true, completion: nil)
     }

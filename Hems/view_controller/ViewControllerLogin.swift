@@ -155,6 +155,8 @@ class ViewControllerLogin: CustomUIViewController {
             CaApp.m_Info.nSeqSite = jo["seq_site"]! as! Int
             CaApp.m_Info.bMainMember = bMainMember
             
+            CaApp.m_Info.isDr = jo["is_dr"]! as! Int
+            
             CaApp.m_Info.dtAuthRequested = jo["time_ack_request"]! as? Date
             CaApp.m_Info.dtAuthResponsed = jo["time_ack_response"]! as? Date
             
@@ -230,6 +232,7 @@ class ViewControllerLogin: CustomUIViewController {
         CaApp.m_Info.strAptHoName = joMemberInfo["apt_ho_name"]! as! String
         CaApp.m_Info.nAptHoArea = joMemberInfo["apt_ho_area"]! as! Int
         CaApp.m_Info.strPhone = joMemberInfo["phone_num"]! as! String
+        CaApp.m_Info.nUnreadDrCount = joMemberInfo["unread_dr_count"]! as! Int
         
         // 현재 Null 값이 전송돼 오류가 발생하기에 주석처리 해놓음. 값이 없을 때 Null을 보내는 문제 상무님이랑 해결 필요
         //CaApp.m_Info.strMail = joMemberInfo["mail"]! as! String
