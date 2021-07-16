@@ -296,6 +296,87 @@
             </objects>
             <point key="canvasLocation" x="2052" y="66"/>
         </scene>
+        <!--View Controller Pop Up Dr-->
+        <scene sceneID="Lar-r6-t2G">
+            <objects>
+                <viewController storyboardIdentifier="ViewControllerPopUpDr" useStoryboardIdentifierAsRestorationIdentifier="YES" id="gE7-Nf-o8J" customClass="ViewControllerPopUpDr" customModule="Hems" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="vs2-IN-czY">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Pw-Kn-PVA">
+                                <rect key="frame" x="30" y="249" width="354" height="398"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0GZ-BW-kt6">
+                                        <rect key="frame" x="152" y="328" width="50" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="50" id="mzo-RD-Yeo"/>
+                                            <constraint firstAttribute="height" constant="50" id="qqB-dC-ruG"/>
+                                        </constraints>
+                                        <state key="normal" image="btn_confirm.png"/>
+                                        <connections>
+                                            <action selector="btnCheck:" destination="gE7-Nf-o8J" eventType="touchUpInside" id="ued-kg-BYY"/>
+                                            <action selector="onBtnConfirm:" destination="gE7-Nf-o8J" eventType="touchUpInside" id="eLj-d8-yxn"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="가입 승인 요청" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="97o-Tp-o3w">
+                                        <rect key="frame" x="98" y="42" width="158" height="33.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="홍길동 님 (010-0000-0000) 이 사용자 가입 승인을 요청했습니다." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kpu-Bb-P0e">
+                                        <rect key="frame" x="37" y="125.5" width="280" height="48"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="280" id="erZ-20-1Z6"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="홍길동 님 (010-0000-0000) 이 사용자 가입 승인을 요청했습니다." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TnS-Qs-GP7">
+                                        <rect key="frame" x="37" y="194" width="280" height="48"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="280" id="CWl-X7-t6q"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" name="hems_green"/>
+                                <constraints>
+                                    <constraint firstItem="TnS-Qs-GP7" firstAttribute="top" secondItem="Kpu-Bb-P0e" secondAttribute="bottom" constant="20.5" id="5ZO-et-Fsr"/>
+                                    <constraint firstItem="TnS-Qs-GP7" firstAttribute="centerX" secondItem="97o-Tp-o3w" secondAttribute="centerX" id="EaN-45-iI1"/>
+                                    <constraint firstItem="97o-Tp-o3w" firstAttribute="centerX" secondItem="0GZ-BW-kt6" secondAttribute="centerX" id="NdE-05-xSJ"/>
+                                    <constraint firstItem="97o-Tp-o3w" firstAttribute="centerX" secondItem="8Pw-Kn-PVA" secondAttribute="centerX" id="Nfg-QI-1BH"/>
+                                    <constraint firstAttribute="width" secondItem="8Pw-Kn-PVA" secondAttribute="height" multiplier="321:361" id="OTg-xE-pQf"/>
+                                    <constraint firstItem="Kpu-Bb-P0e" firstAttribute="top" secondItem="97o-Tp-o3w" secondAttribute="bottom" constant="50" id="ZPA-R1-QvX"/>
+                                    <constraint firstAttribute="bottom" secondItem="0GZ-BW-kt6" secondAttribute="bottom" constant="20" id="mT0-KP-3aC"/>
+                                    <constraint firstItem="97o-Tp-o3w" firstAttribute="top" secondItem="8Pw-Kn-PVA" secondAttribute="top" constant="42" id="sWH-mU-J27"/>
+                                    <constraint firstItem="Kpu-Bb-P0e" firstAttribute="centerX" secondItem="97o-Tp-o3w" secondAttribute="centerX" id="xoZ-5N-qrE"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="LDC-Sd-erT"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.65932217019999995" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="8Pw-Kn-PVA" firstAttribute="leading" secondItem="LDC-Sd-erT" secondAttribute="leading" constant="30" id="9Xh-W7-Mql"/>
+                            <constraint firstItem="8Pw-Kn-PVA" firstAttribute="centerY" secondItem="vs2-IN-czY" secondAttribute="centerY" id="Pge-JM-3aX"/>
+                            <constraint firstItem="8Pw-Kn-PVA" firstAttribute="centerX" secondItem="vs2-IN-czY" secondAttribute="centerX" id="dBW-zY-idr"/>
+                            <constraint firstItem="LDC-Sd-erT" firstAttribute="trailing" secondItem="8Pw-Kn-PVA" secondAttribute="trailing" constant="30" id="hdj-1o-XQV"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="lblContent" destination="Kpu-Bb-P0e" id="IFu-Zh-FMc"/>
+                        <outlet property="lblInfo" destination="TnS-Qs-GP7" id="Cy8-li-Xm9"/>
+                        <outlet property="lblTitle" destination="97o-Tp-o3w" id="MY3-W9-g0Z"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xJ5-XK-zQh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2735" y="66"/>
+        </scene>
     </scenes>
     <resources>
         <image name="btn_confirm.png" width="72" height="72"/>

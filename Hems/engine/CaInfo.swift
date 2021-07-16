@@ -23,6 +23,7 @@ public class CaInfo {
     public let dfMM = DateFormatter() //MM
     public let dfdd = DateFormatter() //dd
     public let dfMMddHHmmss = DateFormatter()
+    public let dfMMddHHmm = DateFormatter()
     
     //Login 유무
     public var isLogin: Bool = false
@@ -152,6 +153,7 @@ public class CaInfo {
     public var alAlarm: Array<CaAlarm> = Array()
     public var alNotice: Array<CaNotice> = Array()
     public var alQna: Array<CaQna> = Array()
+    public var alDr: Array<CaDr> = Array()
     
     //oneMeter 정보
     public var nTransState: Int = -1
@@ -159,6 +161,7 @@ public class CaInfo {
     
     // 공지사항 요청 시간
     public var dtNoticeCreatedMaxForNextRequest: Date? = nil
+    public var dtDrCreatedMaxForNextRequest: Date? = nil
     
     public var m_EnergyManager: CaEnergyManager = CaEnergyManager()
     
@@ -175,6 +178,7 @@ public class CaInfo {
         dfMM.dateFormat = "MM"
         dfdd.dateFormat = "dd"
         dfMMddHHmmss.dateFormat = "MM-dd HH:mm:ss"
+        dfMMddHHmm.dateFormate = "MM월 dd일 HH:mm"
     }
     
     public func removeFamilyMember(_ nSeqMember: Int) -> Bool {
@@ -220,6 +224,24 @@ public class CaInfo {
         for notice in alNotice {
             if notice.bReadStateChanged {
                 strResult = strResult + "\(notice.nSeqNotice),"
+            }
+        }
+        if strResult.isEmpty {return strResult}
+        
+        let firstIndex = strResult.index(strResult.startIndex, offsetBy: 0)
+        let lastIndex = strResult
+            .index(strResult.endIndex, offsetBy: -1)
+        strResult = "\(strResult[firstIndex..<lastIndex])"
+        
+        return strResult
+    }
+    
+    public func getDrReadListString() -> String {
+        var strResult: String = ""
+        
+        for dr in alDr {
+            if dr.bReadStateChanged {
+                strResult = strResult + "\(dr.nSeqDr),"
             }
         }
         if strResult.isEmpty {return strResult}
